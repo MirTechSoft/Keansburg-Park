@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/slick.css" /> -->
+
+    <link href="./css/style .css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/card style.css">
+
+    <link rel="stylesheet" href="./gellery style .css">
+
+    <title>keansburg park</title>
+</head>
+     
+<body>
+    <main>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand" href="index.html">
+                    <strong><span>Keansburg</span> Park</strong>
+                </a>
+
+                <div class="d-lg-none">
+                    <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
+
+                    <a href="./add card .html" class="bi-bag custom-icon"></a>
+
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav mx-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <a class="nav-link" href="disclaimer.html">Disclaimer</a>
+                                <div class="dropdown-content">
+                                    <hr>
+                                    <a href="tickets .html">Tickets</a>
+                                    <a href="entertaiment.html">Entertaiments</a>
+                                    <!-- <a href="#"></a> -->
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="gellery.html">Gellery</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQs</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-none d-lg-block">
+                        <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
+
+                        <a href="add card .html" class="bi-bag custom-icon"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </main>
+    <!-- start section -->
+    <section>
+        <!-- <div>
+            <img class="img-sec" src="./images/images/best-theme-parks-9f53.jpg" width="1000px" alt=""> -->
+
+            <div id="mydata" class="row"></div>
+            <!-- <img class="img-sec" src="./images/images/best-theme-parks-9f53.jpg" width="1000px" alt=""> -->
+            <script src="./js/card data.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.1.js"
+                integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+            <script>
+
+                $(document).ready(function () {
+                    for (let index = 0; index < productsArray.length; index++) {
+                       
+                        $("#mydata").append(`
+                <div class="col-md-4 d-flex">
+                    <div class="card m-4" style="width: 20rem;">
+                        <img class="card-img"src="${productsArray[index].image}" alt="" width="120px" height="100%"class="card-img-top">
+                        </div>
+                    </div>
+                </div>
+            `);
+                    }
+
+                    // Filter functionality
+                    $("#myinput").on("keyup", function () {
+                        var value = $(this).val().toLowerCase();
+                        $("#mydata .card").filter(function () {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                        });
+                    });
+                });
+            </script>
+
+    </section>
+
+    <!-- </div> -->
+    <!-- end start section -->
+</body>

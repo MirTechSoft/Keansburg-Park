@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECommerce-ShoppingCart | Korsat X Parmaga</title>
+
+    <!-- box icons  -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- styles  -->
+    <link rel="stylesheet" href="./ticket-2nav.css">
+    <link rel="stylesheet" href="./ticke-2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:ital,wght@1,900&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+</head>
+
+<body>
+
+    <!-- HEADER  -->
+    <header>
+        <!-- NAV  -->
+        <div class="navbar">
+            <div class="logo">
+                <h3> <a href="#"><span class="color">IBRAASH</span> Stroe</a></h3>
+            </div>
+           
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="./index.html"><h3> Home</a></li></h3>
+                    <li><a href="./product.html"><h3> Product</a></li></h3>
+                    <li><a href="./mens.html"><h3> Mens</a></li></h3>
+                    <li><a href="./womens.html"><h3> Womens</a></li></h3>            
+                    <li><a href="./t-shirt.html"><h3> Shirt</a></li></h3>
+                    <li><a href="./login up.html" class="a-color"><h4> Login</a></li></h4>
+                    <li><a href="./sing up.html" class="a-color"><h4> Sing up</a></li></h4>
+                </ul>
+                <!-- CART ICON  -->
+            </nav>
+            <style>
+                #p-1{
+                       margin-top: 5px;
+                   }
+           
+           </style>
+            <i class='bx bx-shopping-bag' id="cart-icon" style="font-size:27px"></i><p id="p-1">Add To Cart</p>
+            <img src="./images//menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+        <!-- CART  -->
+        <div class="cart">
+            <h2 class="cart-title">Your Cart</h2>
+
+            <!-- CONTENT  -->
+            <div class="cart-content">
+            </div>
+
+            <!-- TOTAL   -->
+            <div class="total">
+                <div class="total-title">Total</div>
+                <div class="total-price">$0</div>
+            </div>
+            <!-- BUY BUTTON  -->
+            <button type="button" class="btn-buy">Buy Now</button>
+            <!-- CART CLOSE  -->
+            <i class='bx bx-x' id="cart-close"></i>
+        </div>
+
+    </header>
+
+
+    <!-- SHOP SECTION  -->
+    
+
+            <div class="container" style="margin-top: 100px;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center">ticket</h1>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container mt-5">
+                <div class="row" id="mydata">
+        
+                </div>
+            </div>
+        
+        
+            <script src="./js/card data.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+            <script>
+                $(document).ready(function () {
+                for (let index = 0; index < productsArray.length; index++) {
+                    $("#cart-icon").append(`
+                        <div class="col-md-4">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="${productsArray[index].image}" alt="" width="200px" height="300px">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h5>${productsArray[index].product}</h5>
+                                        <p1>${productsArray[index].view}<p1>
+                                        <h6>${productsArray[index].price}</h6>
+                                        <a href="add card .html" class="btn btn-primary read-more" data-toggle="modal" data-target="#exampleModal">add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                    }
+        
+                    $("#myinput").on("keyup", function () {
+                        var value = $(this).val().toLowerCase();
+                        $("#cart-icon").filter(function () {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                        });
+                    });
+                });
+            </script>
+    <!-- footer -->
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Downlod Our App</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="app-logo">
+                        <img src="./images/play-store.png">
+                        <img class="trsition" src="./images/app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="./images/logo-white.png">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facbook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- copyright -->
+            <hr>
+            <br>
+            <p class="copyright">Copyright 2024-Ibraash Store</p>
+        </div>
+    </div>
+    <!-- link js  -->
+    <script src="./ticke-2.js"></script>
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "400px"
+            }
+            else {
+                MenuItems.style.maxHeight = "0px"
+            }
+        }
+    </script>
+
+</body>
+
+</html>
